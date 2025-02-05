@@ -22,4 +22,4 @@ CMD [ "/etc/orthanc/" ]
 # https://groups.google.com/d/msg/orthanc-users/qWqxpvCPv8g/Z8huoA5FDAAJ
 ENV MALLOC_ARENA_MAX 5
 
-RUN python3 -m pip install pydicom names
+RUN pip install pydicom names
