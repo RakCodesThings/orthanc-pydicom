@@ -2,7 +2,7 @@ version: "3.3"
 services:
    orthanc:
       build: .
-      pull-policy: build
+      pull_policy: build
       ports: ["8200:8042"]
       command: /etc/orthanc/orthanc.json
       volumes:
