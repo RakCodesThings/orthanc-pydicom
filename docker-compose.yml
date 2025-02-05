@@ -1,0 +1,20 @@
+version: "3.3"
+services:
+   orthanc:
+      build: .
+      pull-policy: build
+      ports: ["8200:8042"]
+      command: /etc/orthanc/orthanc.json
+      volumes:
+        - /mnt/user/appdata/orthanc/etc:/etc/orthanc
+        - /mnt/user/appdata/orthanc/tmp:/tmp
+        - /mnt/user/appdata/orthanc/lib:/var/lib/orthanc
+      environment:
+        VERBOSE_ENABLED: "true"
+        OSIMIS_WEB_VIEWER1_PLUGIN_ENABLED: "true"
+        PYTHON_PLUGIN_ENABLED: "true"
+
+networks:
+  default:
+    name: raknet
+    external: true
